@@ -21,6 +21,7 @@
   <!-- CSS Files
   ================================================== -->
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -35,19 +36,22 @@
     <!-- Player Name -->
     <h2>
       <div id="playerName" class="edit" contenteditable="true" max="20">
-        Jon Doe
+        [Enter Name here]
       </div>
     </h2>
     <hr />
 
     <!-- Player Photo -->
-    <canvas id="canvasImage"></canvas>
+    <div title="Click here or use the button below to upload a photo"
+         onclick="document.getElementById('btnPhoto').click()">
+      <canvas id="canvasImage"></canvas>
+    </div>
 
     <!-- Reward Points -->
     <h2>
       Reward (gp)
       <div id="rewardPoints" class="edit" contenteditable="true" max="4">
-        999
+        [Enter Amount]
       </div>
     </h2>
     <hr />
@@ -56,7 +60,16 @@
     <p>
       Wanted for:
       <div id="wantedDescription" class="edit" contenteditable="true" max="50">
-        crimes against the State
+        [Enter Description Here]
+      </div>
+    </p>
+    <hr />
+
+    <!-- Special Ability -->
+    <p>
+      Special ability:
+      <div id="specialAbility" class="edit" contenteditable="true" max="50">
+        [Enter Description Here]
       </div>
     </p>
     <hr />
@@ -65,7 +78,7 @@
     <p>
       Secret weapon:
       <div id="secretWeapon" class="edit" contenteditable="true" max="50">
-        dragon dagger
+        [Enter Description Here]
       </div>
     </p>
     <hr />
@@ -90,25 +103,26 @@
 
     <!-- Randomize Description -->
     <button type="button" name="btn-text" onclick="generateDescription();">
-      <i class="fa fa-comment" aria-hidden="true"></i> Generate Description
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Randomize Data!
     </button>
     <br />
 
     <!-- Download Poster -->
     <button type="button" name="btn-pdf"
-    onclick="return xepOnline.Formatter.Format('content',
-             {render:'download', filename:'wanted'});">
+            onclick="return xepOnline.Formatter.Format('content',
+                     {render:'download', filename:'wanted'});">
       <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download Poster as PDF
     </button>
     <br />
     <hr />
 
-    <!-- Save Info -->
+    <!-- Save Data -->
     <button type="button" name="btn-save" onclick="saveEdits();">
       <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Data
     </button>
     <br />
 
+    <!-- Clear Data -->
     <button type="button" name="btn-clr" onclick="localStorage.clear();
                                                   location.reload();">
       <i class="fa fa-eraser" aria-hidden="true"></i> Clear Data
@@ -120,6 +134,7 @@
   <!-- JavaScript Files
   ================================================== -->
   <script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
+  <script src="js/jquery-ui.min.js" charset="utf-8"></script>
   <script src="js/xepOnline.jqPlugin.js" charset="utf-8"></script>
   <script src="js/scripts.js" charset="utf-8"></script>
 </body>
