@@ -1,10 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>HomeTrap</title>
-  </head>
-  <body>
+<html class="no-js" lang="en">
 
-  </body>
+<head>
+  <!--- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8" />
+  <title>HomeTrap :: Wanted Poster</title>
+  <meta name="description" content="HomeTrap wanted poster" />
+  <meta name="keywords" content="wanted poster" />
+  <meta name="author" content="jraleman" />
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <!-- Favicon
+  ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <!-- CSS Files
+  ================================================== -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="checkEdits()">
+
+  <!-- Wanted Poster
+  =========================================================================-->
+  <div id="content" class="wanted-paper">
+    <h1>Wanted</h1>
+
+    <!-- Player Name -->
+    <h2>
+      <div id="playerName" class="edit" contenteditable="true" max="20">
+        Jon Doe
+      </div>
+    </h2>
+    <hr />
+
+    <!-- Player Photo -->
+    <canvas id="canvasImage"></canvas>
+
+    <!-- Reward Points -->
+    <h2>
+      Reward (gp)
+      <div id="rewardPoints" class="edit" contenteditable="true" max="4">
+        999
+      </div>
+    </h2>
+    <hr />
+
+    <!-- Wanted Description -->
+    <p>
+      Wanted for:
+      <div id="wantedDescription" class="edit" contenteditable="true" max="50">
+        things
+      </div>
+    </p>
+    <hr /><br />
+
+  </div>
+
+  <!-- Options
+  =========================================================================-->
+  <div class="options">
+
+    <h1>Options</h1>
+    <hr />
+
+    <!-- Photo upload -->
+    <button type="button" id="btnPhoto" name="btn-photo">
+      <i class="fa fa-upload" aria-hidden="true"></i> Upload a Photo
+    </button>
+    <input id="uploadImage" type="file" />
+    <br />
+
+    <!-- Randomize Description -->
+    <button type="button" name="btn-text" onclick="generateDescription();">
+      <i class="fa fa-comment" aria-hidden="true"></i> Generate Description
+    </button>
+    <br />
+
+    <!-- Download Poster -->
+    <button type="button" name="btn-pdf"
+    onclick="return xepOnline.Formatter.Format('content',
+             {render:'download', filename:'wanted'});">
+      <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download Poster as PDF
+    </button>
+    <br />
+    <hr />
+
+    <!-- Save Info -->
+    <button type="button" name="btn-save" onclick="saveEdits();">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Information
+    </button>
+    <br />
+
+  </div>
+
+  <!-- JavaScript Files
+  ================================================== -->
+  <script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
+  <script src="js/xepOnline.jqPlugin.js" charset="utf-8"></script>
+  <script src="js/scripts.js" charset="utf-8"></script>
+</body>
+
 </html>

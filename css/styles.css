@@ -1,0 +1,199 @@
+/*
+** Based on: https://codepen.io/rafaelcastrocouto/pen/mJaRee
+** Thanks! :D
+*/
+
+/*
+** Fonts
+** .............................................................................
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Ewert);
+@import url(https://fonts.googleapis.com/css?family=Ultra);
+
+.wanted-paper * {
+  font-family: "Ultra";
+  color: rgb(82, 42, 10);
+}
+
+/*
+** Base
+** .............................................................................
+*/
+
+html, body {
+  background: url('../images/background-texture.jpg');
+  background-size: 100% 250px;
+  margin: 0;
+}
+
+.wanted-paper {
+  border-radius: 1.5px;
+  min-width: 220px;
+  max-width: 420px;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px black;
+  background: url('../images/paper-texture.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.options {
+  border-radius: 3.5px;
+  min-width: 220px;
+  max-width: 620px;
+  height: auto;
+  margin: 100px auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px black;
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%,
+                    transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+
+/*
+** Headers and text
+** .............................................................................
+*/
+
+.wanted-paper h1 {
+  font-family: "Ewert";
+  font-weight: normal;
+  font-size: 60px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wanted-paper h2 {
+  font-weight: normal;
+  font-size: 30px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wanted-paper h2 {
+  font-weight: normal;
+  font-size: 30px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wanted-paper p {
+  font-size: 16px;
+}
+
+.options h1 {
+  font-family: "Ultra";
+  font-weight: normal;
+  font-size: 42px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #eee;
+}
+.options h2 {
+  font-weight: normal;
+  font-size: 24px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  color: #eee;
+}
+
+/*
+** Canvas (picture frame)
+** .............................................................................
+*/
+
+.wanted-paper canvas {
+  width: 300px;
+  height: 220px;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+  background: url('../images/pirate-avatar.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+/*
+** Editable text
+** .............................................................................
+*/
+
+.wanted-paper #playerName:hover,
+.wanted-paper #rewardPoints:hover,
+.wanted-paper #wantedDescription:hover {
+  color: #eee;
+  background-color: #522A0A;
+}
+
+/*
+** Divisions
+** .............................................................................
+*/
+
+.wanted-paper hr {
+  margin: 8px 30px;
+  border: 0;
+  border-bottom: 2px solid rgb(82, 42, 10);
+}
+
+/*
+** Forms, inputs, buttons, etc...
+** Sources:
+**   Buttons -> https://codepen.io/dbox/pen/bdzeEw
+** .............................................................................
+*/
+
+.options input {
+  display: block;
+  margin: 5px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.options #uploadImage {
+  display: none;
+}
+
+.options button {
+  display: inline-block;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.925rem;
+  letter-spacing: 0.3em;
+  color: rgba(233,233,233,0.9);
+  border-radius: 0;
+  padding: 18px 80px 20px;
+  transition: all 0.7s ease-out;
+  background: linear-gradient(270deg, rgba(223,190,106,0.8),
+                rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+  background-position: 1% 50%;
+  background-size: 300% 300%;
+  text-decoration: none;
+  margin: 0.625rem;
+  border: none;
+  border: 1px solid rgba(223,190,106,0.3);
+}
+
+.options button:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: $white;
+  background-position: 99% 50%;
+}
