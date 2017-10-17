@@ -56,10 +56,21 @@
     <p>
       Wanted for:
       <div id="wantedDescription" class="edit" contenteditable="true" max="50">
-        things
+        crimes against the State
       </div>
     </p>
-    <hr /><br />
+    <hr />
+
+    <!-- Secret Weapon -->
+    <p>
+      Secret weapon:
+      <div id="secretWeapon" class="edit" contenteditable="true" max="50">
+        dragon dagger
+      </div>
+    </p>
+    <hr />
+
+    <br />
 
   </div>
 
@@ -94,7 +105,13 @@
 
     <!-- Save Info -->
     <button type="button" name="btn-save" onclick="saveEdits();">
-      <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Information
+      <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Data
+    </button>
+    <br />
+
+    <button type="button" name="btn-clr" onclick="localStorage.clear();
+                                                  location.reload();">
+      <i class="fa fa-eraser" aria-hidden="true"></i> Clear Data
     </button>
     <br />
 

@@ -42,23 +42,58 @@ $('#btnPhoto').bind("click", function () {
 });
 
 /*
-** Generates a description of the poster
+** Generates a random text for the poster
+** (wanted description, secret weapon, etc...)
 ** .............................................................................
 */
 
-function generateDescription() {
+function randomizeText(id, list) {
   var now = new Date();
   var sec = now.getSeconds();
-  // ADD MESSAGES HERE! :D
-  var list = [
-    "crimes against the State",
-    "second message",
-  ];
   var len = list.length;
 
-  document.getElementById('wantedDescription').innerHTML = list[sec % len];
+  document.getElementById(id).innerHTML = list[sec % len];
   return ;
 }
+
+function generateDescription() {
+  var listDescription = [
+    "crimes against the State",
+    "second message...",
+  ];
+  var listWeapons = [
+    "dragon dagger",
+    "second weapon...",
+  ];
+
+  randomizeText('wantedDescription', listDescription);
+  randomizeText('secretWeapon', listWeapons);
+  return ;
+}
+
+/*
+** Checks max number of character in an edit class div.
+** .............................................................................
+*/
+
+function checkMaxChars(class_name) {
+  var textfields = document.getElementsByClassName(class_name);
+
+  for (i = 0; i < textfields.length; i += 1) {
+    textfields[i].addEventListener("keypress", function(e) {
+      if (this.innerHTML.length >= this.getAttribute("max")) {
+        e.preventDefault();
+        return false;
+      }
+    }, false);
+  }
+  return ;
+}
+
+// Comment this if you don't want to validate the number of chars.
+$(function() {
+  checkMaxChars('edit');
+})
 
 /*
 ** Save the user information
@@ -88,21 +123,3 @@ function checkEdits() {
   }
   return ;
 }
-
-/*
-** Checks max number of character in an edit class div.
-** .............................................................................
-*/
-
-var textfields = document.getElementsByClassName("edit");
-
-$(function() {
-  for (i = 0; i < textfields.length; i += 1) {
-      textfields[i].addEventListener("keypress", function(e) {
-          if(this.innerHTML.length >= this.getAttribute("max")){
-              e.preventDefault();
-              return false;
-          }
-      }, false);
-  }
-})
