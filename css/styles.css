@@ -18,6 +18,9 @@
 
 /*
 ** Base
+** Sources:
+**   - Background    -> http://tinyurl.com/yauye5g3
+**   - Paper Texture -> http://tinyurl.com/yaqahd6t
 ** .............................................................................
 */
 
@@ -133,9 +136,20 @@ html, body {
 ** .............................................................................
 */
 
+.wanted-paper #playerName,
+.wanted-paper #rewardPointsr,
+.wanted-paper #wantedDescription,
+.wanted-paper #specialAbility,
+.wanted-paper #secretWeapon {
+  padding-top: 7.5px;
+  padding-bottom: 2.5px;
+}
+
 .wanted-paper #playerName:hover,
 .wanted-paper #rewardPoints:hover,
-.wanted-paper #wantedDescription:hover {
+.wanted-paper #wantedDescription:hover,
+.wanted-paper #specialAbility:hover,
+.wanted-paper #secretWeapon:hover {
   color: #eee;
   background-color: #522A0A;
 }
@@ -194,6 +208,6 @@ html, body {
 .options button:hover {
   color: #fff;
   border: 1px solid rgba(223,190,106,0);
-  color: $white;
+  color: #eee;
   background-position: 99% 50%;
 }
