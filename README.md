@@ -6,7 +6,8 @@
 
 The goal of the project was to create a captivating experience for families via a printable version of an escape game combined with interactivity with website. The physical version of the product includes a personalized pirate kit with a treasure box, a pirate map, a personalized wanted poster, riddles, loot, and more...
 
-[See the presentation here!](https://app.storymakers.eu/preview/59cc96541486673411453e83)
+* [See the presentation here!](https://app.storymakers.eu/preview/59cc96541486673411453e83)
+* [Try the demo here!](https://jraleman.com/hometrap)
 
 ## 42 Hackathon ESCP
 
